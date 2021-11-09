@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital@1&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -7,13 +8,200 @@
 body {
     width: 100vw;
     height: 100vh;
+    background: #E5E5E5;
+    /* grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto; */
+    margin: 0;
 }
-
+img {
+    height: 100px;
+}
 /* TYPOGRAPHY */
 body {
     font-family: 'Open Sans', sans-serif;
 }
+.allura {
+    font-family: 'Allura', cursive;
+}
+
+.chapter {
+    font-family: 'Cormorant Garamond', serif;
+}
+.thin
+{
+    font-weight: 400;
+}
+
 /* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+}
 
-/* FOOTER*/
+.header .header__logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-right: auto;
+}
 
+.header .header__logo, h3 {
+    font-family: 'Garamond', serif;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.16em;
+}
+
+.header .header__nav {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 1rem;
+}
+
+.header .header__nav .nav__list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    
+}
+
+.header .header__nav .nav__list .list__item {
+    /* border-bottom: 2px solid black; */
+    /* padding: 0; */
+}
+
+.header .header__nav .nav__list .list__item .list__item__link {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    padding: 0rem;
+    margin: 0;
+    text-align: center;
+}
+
+.header .search {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.header .menu {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    margin: 0;
+    border-left: 1px solid rgba(34, 34, 34, 0.2);
+}
+
+
+/* MAIN */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 1rem;
+    grid-template-areas: "top top top top"
+    "middle middle middle middle"; */
+}
+.top {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 1rem;
+    grid-template-areas: 
+    "header header header"
+    "big big big"
+    "breakfast lunch dinner";
+}
+.top .top__header {
+    grid-area: header;
+    text-align: center;
+}
+.top .card-big {
+    grid-area: big;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.top .card-big img {
+    height: 414px;
+}
+.top .card-big .card__big__content {
+    background-color: white;
+    width: 341px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top .card-big .card__big__content h4{
+    padding: 0 2rem;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+.top .card-big .card__big__content h2{
+    padding: 0 2rem;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.top .card-big .card__big__content p{
+    padding: 0 2rem;
+    margin: 0;
+    font-size: 0.75rem;
+}
+.top .card-big .card__big__content .figures {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0rem;
+    
+}
+.top .card-big .card__big__content figure {
+     margin: 0.5rem;
+    
+}
+.top .card-big .card__big__content .star-rating {
+    margin: 0;
+    padding: 0 0.5rem;
+}
+.top .card-big .card__big__content .button__round {
+    border-radius: 50%;
+}
+/*
+.top .card-big .card__big__content .heart {
+    align-items: flex-end; 
+}*/
+.top .card-breakfast {
+    grid-area: breakfast;
+}
+
+.top .card-lunch {
+    grid-area: lunch;
+}
+
+.top .card-dinner{
+    grid-area: dinner;
+}
+
+.top__header .chapter {
+    font-style: italic;
+    font-size: 0.875rem;
+}
+.top__header h1 {
+    font-size: 2.625rem;
+}
+.top__header .chapter__name {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.middle {
+    grid-area: middle;
+}
