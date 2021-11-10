@@ -9,19 +9,12 @@ body {
     width: 100vw;
     height: 100vh;
     background: #E5E5E5;
-    /* grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: auto; */
     margin: 0;
 }
-img {
-    height: 100px;
-}
+
 /* TYPOGRAPHY */
 body {
     font-family: 'Open Sans', sans-serif;
-}
-.allura {
-    font-family: 'Allura', cursive;
 }
 
 .chapter {
@@ -38,7 +31,6 @@ body {
     justify-content: center;
     border-bottom: 1px solid rgba(34, 34, 34, 0.2);
 }
-
 .header .header__logo {
     display: flex;
     margin: 0 2rem;
@@ -46,49 +38,44 @@ body {
     align-items: center;
     margin-right: auto;
 }
-
 .header .header__logo h3 {
     font-family: 'Garamond', serif;
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 0.16em;
 }
-
 .header .header__nav {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     border-bottom: 2px solid black;
     padding:0 1rem;
 }
-
 .header .header__nav .nav__list {
     list-style: none;
     display: flex;
     gap: 1rem;
     padding: 0;
     margin: 0;
-    
 }
-
-
 .header .header__nav .nav__list .list__item .list__item__link {
     font-size: 12px;
     font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: #222222;
     padding: 0rem;
     margin: 0;
     text-align: center;
 }
-
+.header .header__nav .nav__list .list__item .list__item__link:hover {
+    color: black;
+    text-decoration: underline;
+}
 .header .search {
     margin: 0 1rem;
     display: flex;
     align-items: center;
     margin-left: auto;
 }
-
 .header .menu {
     display: flex;
     align-items: center;
@@ -102,7 +89,6 @@ body {
 main {
     max-width: 1000px;
     margin: 0 auto;
-    
 }
 .top {
     width: 100%;
@@ -119,13 +105,8 @@ main {
 .top .card-breakfast {
     grid-area: breakfast;
 }
-
 .top .card-lunch {
     grid-area: lunch;
-}
-
-.top .card-dinner{
-    grid-area: dinner;
 }
 .top .top__header {
     grid-area: header;
@@ -139,6 +120,7 @@ main {
 }
 .top__header h1 {
     font-size: 2.625rem;
+    font-weight: 800;
     margin: 0;
 }
 .top__header .chapter__name {
@@ -205,14 +187,18 @@ main {
     display: flex;
     flex-direction: column;
     font-family: 'open sans', sans-serif;
+    position: relative; 
 }
 .top .card-small img{
     max-width: 100%;
-    height: auto;   
+    height: auto;
+    margin-bottom: 1rem;   
 }
 .top .card-small .heart{
-        /*HJÄÄÄÄÄÄÄÄÄLP!!!!!!!!!!*/
-    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
 }
 .top .card-small h3{
     font-size: 0.875rem;
@@ -228,11 +214,17 @@ main {
     padding: 0rem;
     margin: 0;
 }
-.top .card-dinner .text {
+.top .card-dinner{
+    grid-area: dinner;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+}
+.top .card-dinner .text {
+    text-align: center;
+    margin-bottom: auto;
+}
+.top .card-dinner img {
+    margin-bottom: auto;
 }
 .top .card-dinner .text h3 {
     font-size: 1.5rem;
@@ -247,8 +239,155 @@ main {
     border: 1.8px solid #222222;
     font-weight: 800;
 } 
+.top .button:hover {
+    background-color: #AAAAAA;
+}
 
+.round-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.round-cards .card {
+    text-align: center;
+    padding: 0.2rem;
+    flex: 1;
+}
+.round-cards .card img {
+    margin: 2rem 0;
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+}
+.round-cards .card h2 {
+    font-size: 0.875rem;
+    font-weight: 800;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.round-cards .card p {
+    font-size: 0.75rem;
+    padding: 1rem 2rem;
+    margin-top: 0;
+    line-height: 170%;
+}
 
-.middle {
-    grid-area: middle;
+.author {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-top:7.5rem;
+}
+.author .author__left {
+    position: absolute;
+    left: 0;
+}
+.author .author__left h3 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 4rem;
+}
+.author .author__left h2 {
+    font-size: 2.625rem;
+    text-transform: uppercase;
+    /* position: absolute; */
+    max-width: 430px;
+    margin:0;
+}
+.author .author__left h4 {
+    font-family: 'Allura', cursive;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin:0;
+    transform: matrix(1, -0.03, 0.04, 1, 0, 0);
+}
+.author img {
+    width: 350px;
+    height: 416px;
+    z-index: -1;
+    margin-right: 2rem;
+    object-fit: cover;
+}
+.author .author__right {
+    max-width: 312px;
+    padding: 1rem;
+    margin-right: 1.5rem;
+    padding-bottom: 0;
+    font-size: 0.75rem;
+    line-height: 170%;
+    align-self: flex-end;
+}
+.author .author__right a {
+    font-style: italic;
+    color: #222222;
+    font-size: 0.875rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.brunch-menu {
+    margin-top: 7rem;
+    background-image: url(https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    color: white;
+    width: 1000px;
+    height: 416px;
+    background-position: center bottom;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.brunch-menu h3 {
+    font-size: 0.875rem;
+}
+.brunch-menu h2 {
+    font-size: 2.625rem;
+    max-width: 450px;
+    margin-top: 1.5rem;
+    align-self: center;
+}
+.brunch-menu .rectangle {
+    background-color: white;
+    width: 3.375rem;
+    height: 0.188rem;
+    margin: 0 auto;
+}
+.brunch-menu .button {
+    margin: 0 auto;
+    padding: 1.25rem 3.688rem;
+    border-radius: 60px;
+    border: #EEEEEE 2px solid;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    color: #222222;
+}
+.brunch-menu .button:hover {
+    background-color: lightgray;
+    border: 2px gray solid;
+}
+
+.footer {
+    margin-top: 6rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
+.footer a {
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: black;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer h2 {
+    font-family: 'Garamond', serif;
+    font-style: italic;
+    font-size: 2rem;
 }
